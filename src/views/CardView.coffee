@@ -6,7 +6,9 @@ class window.CardView extends Backbone.View
   initialize: -> @render()
 
   render: ->
+    debugger
     @$el.children().detach()
     @$el.html @template @model.attributes
     @$el.addClass 'covered' unless @model.get 'revealed'
+
 

@@ -7,7 +7,6 @@ describe 'deck', ->
   beforeEach ->
     deck = new Deck()
     hand = deck.dealPlayer()
-    debugger;
 
   describe 'hit', ->
     it 'should give the last card from the deck', ->

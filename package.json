@@ -1,0 +1,12 @@
+{
+  "name": "blackjack",
+  "version": "1.0.0",
+  "description": "Blackjack game",
+  "scripts": {
+    "build": "coffee --compile --output compiled/src src/ && coffee --compile --output compiled/spec spec/",
+    "test": "echo 'Run SpecRunner.html in a browser'"
+  },
+  "devDependencies": {
+    "coffeescript": "^2.7.0"
+  }
+}

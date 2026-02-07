@@ -1,0 +1,12 @@
+{
+  "name": "backbone-blackjack",
+  "version": "1.0.0",
+  "description": "Blackjack game built with Backbone.js",
+  "scripts": {
+    "build": "coffee --compile --output compiled/src src",
+    "test": "echo \"Open SpecRunner.html in a browser to run tests\""
+  },
+  "devDependencies": {
+    "coffeescript": "^2.7.0"
+  }
+}

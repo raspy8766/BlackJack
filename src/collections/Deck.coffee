@@ -2,7 +2,15 @@ class window.Deck extends Backbone.Collection
   model: Card
 
   initialize: ->
-    @add _([0...52]).shuffle().map (card) ->
+    cards = [0...52]
+    # Fisher-Yates shuffle using window.crypto for secure randomness
+    for i in [cards.length - 1..1]
+      rand = new Uint32Array(1)
+      window.crypto.getRandomValues(rand)
+      j = rand[0] % (i + 1)
+      [cards[i], cards[j]] = [cards[j], cards[i]]
+
+    @add cards.map (card) ->
       new Card
         rank: card % 13
         suit: Math.floor(card / 13)

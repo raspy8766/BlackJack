@@ -1,0 +1,31 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "mkdir -p compiled/src compiled/spec && coffee -o compiled/src -c src && coffee -o compiled/spec -c spec && mocha compiled/spec -r test/setup.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raspy8766/BlackJack.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/raspy8766/BlackJack/issues"
+  },
+  "homepage": "https://github.com/raspy8766/BlackJack#readme",
+  "devDependencies": {
+    "chai": "^6.2.2",
+    "coffeescript": "^2.7.0",
+    "jsdom": "^28.0.0",
+    "mocha": "^11.7.5",
+    "sinon": "^21.0.1"
+  }
+}

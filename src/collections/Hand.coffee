@@ -13,9 +13,11 @@ class window.Hand extends Backbone.Collection
       else
         @stand()
     else
-      @add(@deck.pop())
+      card = @deck.pop()
+      @add(card)
       @trigger 'hit'
       @isBusted()
+      card
       
 
 

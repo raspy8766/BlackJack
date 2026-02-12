@@ -1,0 +1,17 @@
+{
+  "name": "blackjack",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "mocha --require coffeescript/register --require test/setup.js spec/*.coffee"
+  },
+  "devDependencies": {
+    "coffeescript": "^2.7.0",
+    "mocha": "^10.2.0",
+    "chai": "^4.3.7",
+    "sinon": "^15.0.3",
+    "jsdom": "^21.1.1",
+    "jquery": "^3.6.4",
+    "underscore": "^1.13.6",
+    "backbone": "^1.4.1"
+  }
+}

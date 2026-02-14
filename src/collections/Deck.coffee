@@ -2,7 +2,18 @@ class window.Deck extends Backbone.Collection
   model: Card
 
   initialize: ->
-    @add _([0...52]).shuffle().map (card) ->
+    cards = [0...52]
+
+    # Secure Fisher-Yates shuffle using window.crypto
+    for i in [cards.length - 1..1]
+      randomBuffer = new Uint32Array(1)
+      (window.crypto or window.msCrypto).getRandomValues(randomBuffer)
+      # Map random value to index j where 0 <= j <= i
+      j = randomBuffer[0] % (i + 1)
+
+      [cards[i], cards[j]] = [cards[j], cards[i]]
+
+    @add _(cards).map (card) ->
       new Card
         rank: card % 13
         suit: Math.floor(card / 13)
@@ -12,4 +23,3 @@ class window.Deck extends Backbone.Collection
 
 
   dealDealer: -> new Hand [@pop().flip(), @pop()], @, true
-

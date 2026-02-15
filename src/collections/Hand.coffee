@@ -1,21 +1,27 @@
 class window.Hand extends Backbone.Collection
   model: Card
 
-  initialize: (array, @deck, @isDealer) ->
+  initialize: (array, options) ->
+    @deck = options.deck
+    @isDealer = options.isDealer
 
   hit: ->
     if @isDealer
       if @scores() < 17
-        @add(@deck.pop())
+        card = @deck.pop()
+        @add(card)
         @trigger 'hit'
         @isBusted()
         @hit()
+        card
       else
         @stand()
     else
-      @add(@deck.pop())
+      card = @deck.pop()
+      @add(card)
       @trigger 'hit'
       @isBusted()
+      card
       
 
 

@@ -1,0 +1,33 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "./node_modules/.bin/mocha --require test/setup.js compiled/spec/DeckSpec.js compiled/spec/CardSpec.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raspy8766/BlackJack.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/raspy8766/BlackJack/issues"
+  },
+  "homepage": "https://github.com/raspy8766/BlackJack#readme",
+  "dependencies": {
+    "backbone": "^1.6.1",
+    "chai": "^6.2.2",
+    "coffeescript": "^2.7.0",
+    "jquery": "^4.0.0",
+    "jsdom": "^28.1.0",
+    "mocha": "^11.7.5",
+    "underscore": "^1.13.7"
+  }
+}
